@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Тустань — шпаргалка для влогу · Кузня</title>
+<style>
+  :root{
+    --bg:#0e0f13; --card:#16181f; --card2:#1c1f28; --line:#272b36;
+    --text:#e9ecf2; --muted:#9aa3b2; --accent:#e8a13a; --accent2:#5db0ff;
+    --good:#57c98a; --r:18px;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.6;font-size:17px;-webkit-text-size-adjust:100%}
+  .wrap{max-width:760px;margin:0 auto;padding:20px 16px 90px}
+  header{padding:26px 0 8px}
+  .kicker{color:var(--accent);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:12px}
+  h1{font-size:30px;line-height:1.15;margin:8px 0 6px;font-weight:800}
+  .sub{color:var(--muted);font-size:15px;margin:0}
+  .chips{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 4px}
+  .chip{background:var(--card2);border:1px solid var(--line);color:var(--text);
+    padding:7px 12px;border-radius:999px;font-size:13px;font-weight:600;text-decoration:none;display:inline-flex;gap:6px;align-items:center}
+  .chip b{color:var(--accent2)}
+  section{margin:26px 0}
+  h2{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);
+    margin:0 0 12px;font-weight:700}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+    padding:16px 16px;margin:10px 0}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  @media(max-width:480px){.grid{grid-template-columns:1fr}}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 14px}
+  .stat .l{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.06em}
+  .stat .v{font-size:18px;font-weight:700;margin-top:2px}
+  .fact{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+  .fact:last-child{border-bottom:none}
+  .fact .n{flex:0 0 30px;height:30px;border-radius:9px;background:var(--card2);
+    display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--accent);font-size:14px}
+  .fact .t{flex:1}
+  .fact .t b{display:block;margin-bottom:1px}
+  .fact .t span{color:var(--muted);font-size:14.5px}
+  .hook{background:var(--card2);border-left:3px solid var(--accent);border-radius:0 12px 12px 0;
+    padding:12px 14px;margin:10px 0;font-size:16px}
+  .hook i{color:var(--accent);font-style:normal;font-weight:700}
+  .shot{display:flex;gap:10px;align-items:flex-start;padding:9px 0}
+  .shot .dot{flex:0 0 8px;height:8px;border-radius:50%;background:var(--accent2);margin-top:9px}
+  .step{counter-reset:none}
+  .step .card{position:relative}
+  .tag{display:inline-block;font-size:11px;font-weight:700;color:var(--bg);background:var(--accent);
+    padding:2px 8px;border-radius:6px;text-transform:uppercase;letter-spacing:.04em}
+  .tag.b{background:var(--accent2)}
+  .tag.g{background:var(--good)}
+  ul{margin:6px 0;padding-left:20px}
+  li{margin:5px 0}
+  a.src{color:var(--accent2);text-decoration:none;font-size:13px}
+  .bridge{background:linear-gradient(160deg,#1c2230,#16181f);border:1px solid #2a3346}
+  .toc{position:sticky;top:0;background:rgba(14,15,19,.92);backdrop-filter:blur(10px);
+    z-index:9;margin:0 -16px;padding:10px 16px;border-bottom:1px solid var(--line);
+    display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+  .toc::-webkit-scrollbar{display:none}
+  .toc a{white-space:nowrap;color:var(--muted);text-decoration:none;font-size:13px;font-weight:600;
+    padding:6px 10px;border-radius:8px;background:var(--card)}
+  .foot{color:var(--muted);font-size:13px;text-align:center;margin-top:30px}
+  .legend{color:var(--muted);font-size:13.5px;font-style:italic}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="kicker">🔥 Кузня · Влог</div>
+    <h1>Тустань — шпаргалка перед зйомкою</h1>
+    <p class="sub">Наскельна фортеця в Уричі · все, що варто знати в дорозі + готовий каркас відео</p>
+    <div class="chips">
+      <span class="chip">📅 квіт–жовт <b>10:00–18:00</b></span>
+      <span class="chip">🎟 <b>90 / 45 грн</b></span>
+      <span class="chip">📍 Урич, ~110 км від Львова</span>
+    </div>
+  </header>
+
+  <nav class="toc">
+    <a href="#trip">У дорозі</a>
+    <a href="#facts">10 фактів</a>
+    <a href="#story">Сторітелінг</a>
+    <a href="#video">Каркас відео</a>
+    <a href="#shots">Кадри</a>
+    <a href="#bridge">Місток до справи</a>
+  </nav>
+
+  <!-- ПРАКТИКА -->
+  <section id="trip">
+    <h2>Практика — швидко перед поїздкою</h2>
+    <div class="grid">
+      <div class="stat"><div class="l">Графік</div><div class="v">10:00–18:00</div></div>
+      <div class="stat"><div class="l">Квиток</div><div class="v">90 / 45 грн</div></div>
+      <div class="stat"><div class="l">Відстань</div><div class="v">~110 км (Львів→Урич)</div></div>
+      <div class="stat"><div class="l">Що бачимо</div><div class="v">Скелі, музей, «Хата у Глубокім»</div></div>
+    </div>
+    <div class="card">
+      <b>Один квиток покриває:</b> територію заповідника + музей Тустані + Центр локальної історії «Хата у Глубокім».<br>
+      <span class="legend">Зимовий графік (лист–бер): 9:30–17:00. Вихідні: Різдво, Водохреща, Великдень. Квитки — онлайн або на місці.</span>
+    </div>
+    <div class="card">
+      <b>На місці є:</b> мала дерев'яна фортеця · дитячий майданчик · мотузковий парк · кав'ярня · сувенірна крамниця. Дорога — через Східницю.
+    </div>
+  </section>
+
+  <!-- ФАКТИ -->
+  <section id="facts">
+    <h2>10 фактів, які чіпляють у кадрі</h2>
+    <div class="card">
+      <div class="fact"><div class="n">1</div><div class="t"><b>Єдина така в Європі</b><span>Наскельна фортеця, де скелі були фундаментом для дерев'яних споруд. Аналогів немає.</span></div></div>
+      <div class="fact"><div class="n">2</div><div class="t"><b>4000+ пазів у камені</b><span>Вирубані вручну гнізда під дерев'яні бруси. По них і реконструювали фортецю.</span></div></div>
+      <div class="fact"><div class="n">3</div><div class="t"><b>~300 петрогліфів</b><span>Вибиті на каменях знаки-малюнки. Загадка, яку досі читають.</span></div></div>
+      <div class="fact"><div class="n">4</div><div class="t"><b>Скелям ~55 млн років</b><span>Дно прадавнього океану Тетіс. Стояв тут ще до того, як з'явилися люди.</span></div></div>
+      <div class="fact"><div class="n">5</div><div class="t"><b>Митниця на соляному шляху</b><span>Збирали мито з купців: Дрогобич → Закарпаття → Західна Європа.</span></div></div>
+      <div class="fact"><div class="n">6</div><div class="t"><b>XII–XVI ст.</b><span>Перша згадка ~1340, остання ~1565. Кількасот років жила, потім зникла.</span></div></div>
+      <div class="fact"><div class="n">7</div><div class="t"><b>Відкрив 1 чоловік</b><span>Архітектор-археолог Михайло Рожко, 1971. Понад 30 років досліджував.</span></div></div>
+      <div class="fact"><div class="n">8</div><div class="t"><b>Реконструкція на 90%</b><span>За пазами Рожко відтворив вигляд 4–5-поверхової дерев'яної будівлі, якої давно немає.</span></div></div>
+      <div class="fact"><div class="n">9</div><div class="t"><b>Скелі мають імена</b><span>Камінь (ядро), Острий Камінь, Мала Скеля. Криниця, цистерни, рукотворні печери.</span></div></div>
+      <div class="fact"><div class="n">10</div><div class="t"><b>Фестиваль «Ту Стань!»</b><span>Щороку в серпні: ~800 реконструкторів, ~10 тис. гостей, бугурти, середньовічна музика.</span></div></div>
+    </div>
+  </section>
+
+  <!-- СТОРІТЕЛІНГ -->
+  <section id="story">
+    <h2>Сторітелінг — кути, з яких заходити</h2>
+    <div class="card">
+      <p class="legend" style="margin-top:0">Не перелічуй факти — обери 1–2 кути і веди через них.</p>
+      <div class="fact"><div class="n">A</div><div class="t"><b>«Місто, яке збудували в небі»</b><span>Дерев'яний 4–5-поверховий замок просто на скелях. Закрий очі — і уяви, як він тут стояв.</span></div></div>
+      <div class="fact"><div class="n">B</div><div class="t"><b>«Один чоловік повернув ціле місто»</b><span>Рожко по дірках у камені відновив те, що зникло 500 років тому. Історія про одержимість і деталь.</span></div></div>
+      <div class="fact"><div class="n">C</div><div class="t"><b>«Невидиме, яке треба вміти прочитати»</b><span>Турист бачить просто скелі. Хто знає код — бачить фортецю. Метафора всього, чим ти займаєшся.</span></div></div>
+    </div>
+  </section>
+
+  <!-- КАРКАС ВІДЕО -->
+  <section id="video" class="step">
+    <h2>Каркас відео (3–5 хв влог)</h2>
+
+    <div class="card">
+      <span class="tag b">0–8 сек · ХУК</span>
+      <div class="hook"><i>Варіант 1:</i> «Це — єдина така фортеця в Європі. І її… не існує. Зараз поясню.»</div>
+      <div class="hook"><i>Варіант 2:</i> «500 років тому тут стояв дерев'яний замок у 5 поверхів. Сьогодні від нього лишились тільки… дірки в камені.»</div>
+      <div class="hook"><i>Варіант 3 (особистий):</i> «Я взяв вихідний, родину — і поїхав туди, де історію треба вміти читати. Поїхали.»</div>
+    </div>
+
+    <div class="card">
+      <span class="tag">10–60 сек · СЕТАП</span>
+      <p style="margin:8px 0 0">Де ти, чому тут, що це за місце. 1–2 факти-гачки (№1 + №4 або №7). Покажи масштаб скель.</p>
+    </div>
+
+    <div class="card">
+      <span class="tag">1–3 хв · ТІЛО</span>
+      <ul>
+        <li>Веди через обраний кут (A/B/C вище), не списком.</li>
+        <li>Один «вау»-факт біля конкретної скелі: пази → реконструкція.</li>
+        <li>Особистий шар: що ти відчув, що нагадало про роботу/життя.</li>
+      </ul>
+    </div>
+
+    <div class="card bridge">
+      <span class="tag g">останні 20–30 сек · МІСТОК + CTA</span>
+      <p style="margin:8px 0 0">Звʼяжи місце з тим, чим живеш (див. секцію нижче). М'який CTA: «підписуйся — показую свої проєкти і поїздки», або згадка Кузні / поточного кейсу.</p>
+    </div>
+  </section>
+
+  <!-- КАДРИ -->
+  <section id="shots">
+    <h2>Shot-list — що зняти на місці</h2>
+    <div class="card">
+      <div class="shot"><div class="dot"></div><div>Широкий кадр скель знизу вгору — масштаб (під хук)</div></div>
+      <div class="shot"><div class="dot"></div><div>Крупно: пази/вруби в камені — «ось ці дірки тримали ціле місто»</div></div>
+      <div class="shot"><div class="dot"></div><div>Ти на тлі скелі, говориш у камеру — talking head</div></div>
+      <div class="shot"><div class="dot"></div><div>Макет/реконструкція в музеї — «ось як це виглядало»</div></div>
+      <div class="shot"><div class="dot"></div><div>Деталі: петрогліфи, криниця, дерев'яна фортеця</div></div>
+      <div class="shot"><div class="dot"></div><div>Сім'я / дорога / кав'ярня — людський, теплий b-roll</div></div>
+      <div class="shot"><div class="dot"></div><div>Фінал: вид згори зі скелі — під CTA</div></div>
+    </div>
+    <p class="legend">Знімай більше b-roll, ніж здається треба. Говори короткими реченнями — легше монтувати.</p>
+  </section>
+
+  <!-- МІСТОК ДО СПРАВИ -->
+  <section id="bridge">
+    <h2>Місток: поїздка → твоя справа</h2>
+    <div class="card bridge">
+      <p style="margin-top:0">Стратегія цих відео — показувати <b>життя, досвід, проєкти</b>, і через це знаходити клієнтів. Тустань дає 3 готові містки:</p>
+      <div class="fact"><div class="n">→</div><div class="t"><b>Тустань = Vatra / сайти</b><span>«Турист бачить скелі. Я бачу систему, яку хтось спроєктував по деталях. Так само з сайтом — за пару днів збираю те, що працює, а не просто гарне.»</span></div></div>
+      <div class="fact"><div class="n">→</div><div class="t"><b>Один чоловік + деталь = Кузня</b><span>Рожко по дрібницях відновив місто. Ти по дрібницях + AI збираєш продукти швидко. Це про підхід, не про хвастощі.</span></div></div>
+      <div class="fact"><div class="n">→</div><div class="t"><b>Спадщина = благодійність</b><span>М'яко: місця як Тустань тримаються на людях і громаді. Природний місток до теми фонду / спільної справи — без продажу.</span></div></div>
+      <p class="legend" style="margin-bottom:0">Обери <b>один</b> місток на відео. Не пхай усі три — буде реклама.</p>
+    </div>
+  </section>
+
+  <div class="foot">
+    Зроблено для зйомки · оновити можна будь-коли<br>
+    Джерела: Вікіпедія, заповідник «Тустань», Українська правда.Життя
+  </div>
+
+</div>
+</body>
+</html>
