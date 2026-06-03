@@ -4,201 +4,391 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex">
-<title>Тустань — шпаргалка для влогу · Кузня</title>
+<title>Кузня — сценарії перших відео</title>
 <style>
   :root{
     --bg:#0e0f13; --card:#16181f; --card2:#1c1f28; --line:#272b36;
     --text:#e9ecf2; --muted:#9aa3b2; --accent:#e8a13a; --accent2:#5db0ff;
-    --good:#57c98a; --r:18px;
+    --good:#57c98a; --warm:#ff8f6b; --r:18px;
   }
   *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
   html{scroll-behavior:smooth}
   body{margin:0;background:var(--bg);color:var(--text);
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     line-height:1.6;font-size:17px;-webkit-text-size-adjust:100%}
-  .wrap{max-width:760px;margin:0 auto;padding:20px 16px 90px}
-  header{padding:26px 0 8px}
+  .wrap{max-width:780px;margin:0 auto;padding:18px 14px 90px}
+  header{padding:18px 4px 6px}
   .kicker{color:var(--accent);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:12px}
-  h1{font-size:30px;line-height:1.15;margin:8px 0 6px;font-weight:800}
-  .sub{color:var(--muted);font-size:15px;margin:0}
-  .chips{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 4px}
-  .chip{background:var(--card2);border:1px solid var(--line);color:var(--text);
-    padding:7px 12px;border-radius:999px;font-size:13px;font-weight:600;text-decoration:none;display:inline-flex;gap:6px;align-items:center}
-  .chip b{color:var(--accent2)}
-  section{margin:26px 0}
-  h2{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);
-    margin:0 0 12px;font-weight:700}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
-    padding:16px 16px;margin:10px 0}
-  .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-  @media(max-width:480px){.grid{grid-template-columns:1fr}}
-  .stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 14px}
-  .stat .l{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.06em}
-  .stat .v{font-size:18px;font-weight:700;margin-top:2px}
-  .fact{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
-  .fact:last-child{border-bottom:none}
-  .fact .n{flex:0 0 30px;height:30px;border-radius:9px;background:var(--card2);
-    display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--accent);font-size:14px}
-  .fact .t{flex:1}
-  .fact .t b{display:block;margin-bottom:1px}
-  .fact .t span{color:var(--muted);font-size:14.5px}
-  .hook{background:var(--card2);border-left:3px solid var(--accent);border-radius:0 12px 12px 0;
-    padding:12px 14px;margin:10px 0;font-size:16px}
-  .hook i{color:var(--accent);font-style:normal;font-weight:700}
-  .shot{display:flex;gap:10px;align-items:flex-start;padding:9px 0}
-  .shot .dot{flex:0 0 8px;height:8px;border-radius:50%;background:var(--accent2);margin-top:9px}
-  .step{counter-reset:none}
-  .step .card{position:relative}
-  .tag{display:inline-block;font-size:11px;font-weight:700;color:var(--bg);background:var(--accent);
-    padding:2px 8px;border-radius:6px;text-transform:uppercase;letter-spacing:.04em}
-  .tag.b{background:var(--accent2)}
-  .tag.g{background:var(--good)}
-  ul{margin:6px 0;padding-left:20px}
-  li{margin:5px 0}
-  a.src{color:var(--accent2);text-decoration:none;font-size:13px}
-  .bridge{background:linear-gradient(160deg,#1c2230,#16181f);border:1px solid #2a3346}
-  .toc{position:sticky;top:0;background:rgba(14,15,19,.92);backdrop-filter:blur(10px);
-    z-index:9;margin:0 -16px;padding:10px 16px;border-bottom:1px solid var(--line);
-    display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
-  .toc::-webkit-scrollbar{display:none}
-  .toc a{white-space:nowrap;color:var(--muted);text-decoration:none;font-size:13px;font-weight:600;
-    padding:6px 10px;border-radius:8px;background:var(--card)}
-  .foot{color:var(--muted);font-size:13px;text-align:center;margin-top:30px}
-  .legend{color:var(--muted);font-size:13.5px;font-style:italic}
+  h1{font-size:27px;line-height:1.15;margin:8px 0 6px;font-weight:800}
+  .sub{color:var(--muted);font-size:14.5px;margin:0}
+  /* банер локації */
+  .loc{background:linear-gradient(160deg,#241a12,#16181f);border:1px solid #3a2a1a;
+    border-radius:var(--r);padding:14px 15px;margin:16px 0 6px}
+  .loc b{color:var(--accent)}
+  .loc .pick{display:inline-block;background:var(--accent);color:#1a1206;font-weight:700;
+    border-radius:7px;padding:1px 7px;margin:0 1px;font-size:14px}
+  /* таби */
+  .tabs{position:sticky;top:0;z-index:9;background:rgba(14,15,19,.93);backdrop-filter:blur(10px);
+    display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin:14px -14px 6px;padding:10px 14px;
+    border-bottom:1px solid var(--line)}
+  .tabs::-webkit-scrollbar{display:none}
+  .tab{white-space:nowrap;border:1px solid var(--line);background:var(--card);color:var(--muted);
+    font-weight:600;font-size:14px;padding:8px 14px;border-radius:999px;cursor:pointer}
+  .tab.on{background:var(--accent);color:#1a1206;border-color:var(--accent)}
+  .panel{display:none}
+  .panel.on{display:block}
+  /* картка-відео (accordion) */
+  details{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+    margin:11px 0;overflow:hidden}
+  details[open]{border-color:#33384a}
+  summary{list-style:none;cursor:pointer;padding:14px 15px;display:flex;flex-direction:column;gap:9px}
+  summary::-webkit-details-marker{display:none}
+  .row1{display:flex;align-items:flex-start;gap:10px}
+  .num{flex:0 0 32px;height:32px;border-radius:9px;background:var(--card2);color:var(--accent);
+    font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center}
+  .ttl{flex:1;font-weight:700;font-size:17px;line-height:1.25;padding-top:3px}
+  .car{flex:0 0 16px;color:var(--muted);font-size:13px;padding-top:6px;transition:.2s}
+  details[open] .car{transform:rotate(180deg)}
+  .badges{display:flex;gap:6px;flex-wrap:wrap;padding-left:42px}
+  .b{font-size:11.5px;font-weight:700;padding:3px 9px;border-radius:999px;border:1px solid var(--line)}
+  .b.mood{color:var(--warm);border-color:#4a2f24}
+  .b.fmt{color:var(--accent2);border-color:#24384a}
+  .b.loc{color:var(--good);border-color:#1f4030}
+  .b.pil{color:var(--muted)}
+  .body{padding:4px 15px 16px;border-top:1px solid var(--line);margin-top:2px}
+  .lab{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700;margin:14px 0 5px}
+  .hook{background:var(--card2);border-left:3px solid var(--accent);border-radius:0 11px 11px 0;
+    padding:10px 13px;margin:7px 0;font-size:15.5px}
+  .hook i{color:var(--accent);font-style:normal;font-weight:700;display:block;font-size:12px;margin-bottom:2px}
+  blockquote{margin:6px 0;padding:10px 13px;background:var(--card2);border-radius:11px;
+    font-size:15.5px;color:#dde3ee}
+  .screen{background:#13202b;border:1px solid #24384a;border-radius:10px;padding:9px 12px;
+    font-size:13.5px;color:var(--accent2);font-family:ui-monospace,Menlo,monospace}
+  .shoot{font-size:14.5px;color:var(--muted)}
+  /* техрамки */
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:15px;margin:10px 0}
+  .card h3{margin:0 0 8px;font-size:16px}
+  ul{margin:6px 0;padding-left:20px}li{margin:5px 0}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+  @media(max-width:430px){.grid{grid-template-columns:1fr}}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:11px 13px}
+  .stat .l{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+  .stat .v{font-size:16px;font-weight:700;margin-top:2px}
+  .legend{color:var(--muted);font-size:13px;font-style:italic}
+  .fact{display:flex;gap:11px;padding:10px 0;border-bottom:1px solid var(--line)}
+  .fact:last-child{border:none}
+  .fact .fn{flex:0 0 26px;height:26px;border-radius:8px;background:var(--card2);color:var(--accent);
+    font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center}
+  .fact b{display:block}.fact span{color:var(--muted);font-size:14px}
+  .foot{color:var(--muted);font-size:12.5px;text-align:center;margin-top:28px}
+  .warnb{background:#2a1418;border:1px solid #4a2128;border-radius:12px;padding:11px 13px;font-size:14px;margin:10px 0}
+  .warnb b{color:#ff7a8a}
 </style>
 </head>
 <body>
 <div class="wrap">
 
   <header>
-    <div class="kicker">🔥 Кузня · Влог</div>
-    <h1>Тустань — шпаргалка перед зйомкою</h1>
-    <p class="sub">Наскельна фортеця в Уричі · все, що варто знати в дорозі + готовий каркас відео</p>
-    <div class="chips">
-      <span class="chip">📅 квіт–жовт <b>10:00–18:00</b></span>
-      <span class="chip">🎟 <b>90 / 45 грн</b></span>
-      <span class="chip">📍 Урич, ~110 км від Львова</span>
-    </div>
+    <div class="kicker">🔥 Кузня · перші відео</div>
+    <h1>Сценарії під запис — обери під настрій</h1>
+    <p class="sub">10 готових тем + хуки, тіло, CTA, що зняти. Тапни картку — розгорнеться повний сценарій.</p>
   </header>
 
-  <nav class="toc">
-    <a href="#trip">У дорозі</a>
-    <a href="#facts">10 фактів</a>
-    <a href="#story">Сторітелінг</a>
-    <a href="#video">Каркас відео</a>
-    <a href="#shots">Кадри</a>
-    <a href="#bridge">Місток до справи</a>
-  </nav>
+  <div class="loc">
+    🏔️ <b>Сьогодні в Тустані</b> — знімай те, де треба <b>лише ти + гарне тло</b>:
+    <span class="pick">№1</span><span class="pick">№4</span><span class="pick">№5</span><span class="pick">№9</span> (чистий talking-head).
+    Демо-екранні (№2,3,6,8,10) лиши на вдома — там потрібен запис екрана.
+  </div>
 
-  <!-- ПРАКТИКА -->
-  <section id="trip">
-    <h2>Практика — швидко перед поїздкою</h2>
+  <div class="tabs">
+    <button class="tab on" data-p="vids">📋 10 відео</button>
+    <button class="tab" data-p="tech">⚙️ Як знімати</button>
+    <button class="tab" data-p="tust">🏔️ Тустань-факти</button>
+    <button class="tab" data-p="why">🎯 Навіщо</button>
+  </div>
+
+  <!-- ===== ВІДЕО ===== -->
+  <div class="panel on" id="vids">
+
+    <!-- 1 -->
+    <details open>
+      <summary>
+        <div class="row1"><div class="num">1</div><div class="ttl">«Я будую 4 проєкти сам. Ось як» — маніфест</div><div class="car">▼</div></div>
+        <div class="badges"><span class="b mood">спокійний · впевнений</span><span class="b fmt">talking-head + b-roll</span><span class="b loc">📍 будь-де (Тустань ✓)</span><span class="b pil">P1 Кузня</span></div>
+      </summary>
+      <div class="body">
+        <div class="lab">Гачок (0–3с, у камеру)</div>
+        <blockquote>«Я веду чотири проєкти одночасно. Сам. І зараз покажу як.»</blockquote>
+        <div class="lab">Тіло (3–25с)</div>
+        <blockquote>«Навчальний застосунок для дітей. Сайти під бізнес. Систему, що тримає всі мої справи. І благодійний фонд.<br>Секрет не в тому, що я геній. Секрет — команда AI-агентів, які пишуть код, поки я сплю.<br>Я перестав бути виконавцем. Я став тим, хто керує кузнею.»</blockquote>
+        <div class="lab">Розв'язка / CTA</div>
+        <blockquote>«Підписуйся — показуватиму кожен продукт зсередини. Без прикрас.»</blockquote>
+        <div class="lab">Що зняти</div>
+        <p class="shoot">Talking-head + 4 b-roll по 2с (екрани Школярика, Vatra, TSP, фонду) вставимо потім. У Тустані вистачить самого talking-head на тлі скель.</p>
+        <div class="lab">Написи на екран</div>
+        <div class="screen">4 проєкти. 1 людина. → Школярик · Vatra · TSP · Фонд</div>
+      </div>
+    </details>
+
+    <!-- 2 -->
+    <details>
+      <summary>
+        <div class="row1"><div class="num">2</div><div class="ttl">«Школярик: застосунок для моїх доньок»</div><div class="car">▼</div></div>
+        <div class="badges"><span class="b mood">тепле · особисте</span><span class="b fmt">запис екрана + вступ</span><span class="b loc">🏠 вдома</span><span class="b pil">P2/P3</span></div>
+      </summary>
+      <div class="body">
+        <div class="lab">Гачок (0–3с)</div>
+        <blockquote>«У мене чотири доньки. І я зробив для них застосунок, щоб вони вчились граючись.»</blockquote>
+        <div class="lab">Тіло (3–28с)</div>
+        <blockquote>«Це Школярик. Математика, мови, природа — у вигляді ігор на островах.<br><i>(перехід на запис екрана — проходиш одну гру)</i><br>Жодної реклами. Жодних покупок усередині. Просто дитина грає і вчиться.<br>Я будую його сам, бо хотів застосунок, який сам дам своїм дітям у руки.»</blockquote>
+        <div class="lab">CTA</div>
+        <blockquote>«Хочеш, щоб показав, як влаштований всередині? Напиши в коментар.»</blockquote>
+        <div class="lab">Що зняти</div>
+        <p class="shoot">Короткий talking-head вступ (телефон у руці ок) + головне — запис екрана, де проходиш 1 острів. Бонус: донька дивиться в екран через плече (без обличчя, етично).</p>
+        <div class="lab">Написи на екран</div>
+        <div class="screen">Школярик · 9 островів · 0 реклами · 0 покупок</div>
+      </div>
+    </details>
+
+    <!-- 3 -->
+    <details>
+      <summary>
+        <div class="row1"><div class="num">3</div><div class="ttl">«Сайт за один день за допомогою AI» — Vatra</div><div class="car">▼</div></div>
+        <div class="badges"><span class="b mood">драйвовий · практичний</span><span class="b fmt">запис екрана</span><span class="b loc">🏠 вдома</span><span class="b pil">P2 Vatra</span></div>
+      </summary>
+      <div class="body">
+        <div class="lab">Гачок (0–3с)</div>
+        <blockquote>«Цей сайт зробив за один день. Не дизайнер, не агентство — я з AI.»</blockquote>
+        <div class="lab">Тіло (3–30с)</div>
+        <blockquote><i>(запис екрана: порожня сторінка → готовий сайт, прискорено)</i><br>«Описав словами, що треба бізнесу. AI згенерував структуру. Я довів до пуття — текст, кольори, форму заявки.<br>Те, за що агентство просить два тижні й кілька тисяч доларів, тепер — один вечір.<br>Це Vatra — так я тепер роблю сайти під замовлення.»</blockquote>
+        <div class="lab">CTA</div>
+        <blockquote>«Роблю це відкрито — показую процес повністю. Хочеш так само? Пиши, рухаймо разом.»</blockquote>
+        <div class="lab">Що зняти</div>
+        <p class="shoot">Повністю запис екрана (timelapse складання сайту) + голос за кадром. Обличчя не обов'язкове.</p>
+        <div class="lab">Написи на екран</div>
+        <div class="screen">1 день · замість 2 тижнів · Vatra</div>
+      </div>
+    </details>
+
+    <!-- 4 -->
+    <details>
+      <summary>
+        <div class="row1"><div class="num">4</div><div class="ttl">«Мій робочий день: я + 6 AI-агентів»</div><div class="car">▼</div></div>
+        <div class="badges"><span class="b mood">цікавий · футуристичний</span><span class="b fmt">talking-head + скріни</span><span class="b loc">📍 будь-де (Тустань ✓)</span><span class="b pil">P1</span></div>
+      </summary>
+      <div class="body">
+        <div class="lab">Гачок (0–3с)</div>
+        <blockquote>«У мене в команді шість співробітників. Жоден з них не людина.»</blockquote>
+        <div class="lab">Тіло (3–28с)</div>
+        <blockquote>«У мене є AI-агенти з ролями: один пише код, інший — тексти, інший досліджує ринок, інший веде проєкти.<br>Зранку я роздаю їм задачі. Поки я снідаю з дітьми — вони працюють.<br><i>(скріни задач/агентів)</i><br>Я один, але працюю як невелика студія. Ось як виглядає майбутнє роботи фаундера.»</blockquote>
+        <div class="lab">CTA</div>
+        <blockquote>«Цікаво, як це налаштовано? Стеж — розкладу по поличках.»</blockquote>
+        <div class="lab">Що зняти</div>
+        <p class="shoot">Talking-head (можна в Тустані) + скріни панелі агентів врізати потім. B-roll ранку/кави опційно.</p>
+        <div class="lab">Написи на екран</div>
+        <div class="screen">6 агентів · 0 людей · 1 фаундер</div>
+      </div>
+    </details>
+
+    <!-- 5 -->
+    <details>
+      <summary>
+        <div class="row1"><div class="num">5</div><div class="ttl">«3 помилки, коли замовляєш сайт чи застосунок»</div><div class="car">▼</div></div>
+        <div class="badges"><span class="b mood">прямий · контрарний</span><span class="b fmt">чистий talking-head</span><span class="b loc">📍 будь-де (Тустань ✓)</span><span class="b pil">P4 метод</span></div>
+      </summary>
+      <div class="body">
+        <div class="lab">Гачок (0–3с)</div>
+        <blockquote>«Три помилки, через які бізнес переплачує за сайт. Перша — найдорожча.»</blockquote>
+        <div class="lab">Тіло (3–30с)</div>
+        <blockquote>«Перша: підписуєш договір, не розуміючи, що в нього входить. Потім доплачуєш за "додаткові" функції, які думав, що вже оплатив.<br>Друга: береш агентство, коли тобі вистачило б однієї людини з AI.<br>Третя: платиш за процес, а не за результат. Тебе має цікавити робочий сайт, а не звіти про роботу.»</blockquote>
+        <div class="lab">CTA</div>
+        <blockquote>«Я союзник на твоєму боці, а не з боку підрядника. Підписуйся — буде більше такого.»</blockquote>
+        <div class="lab">Що зняти</div>
+        <p class="shoot">Чистий talking-head — ідеально для Тустані. Лише написи-лічильник помилок, b-roll не потрібен.</p>
+        <div class="lab">Написи на екран</div>
+        <div class="screen">Помилка 1 / 2 / 3 → Ascend Griffin · твій союзник в IT</div>
+      </div>
+    </details>
+
+    <!-- 6 -->
+    <details>
+      <summary>
+        <div class="row1"><div class="num">6</div><div class="ttl">«Дав планшет дитині на 5 хвилин» — Школярик у дії</div><div class="car">▼</div></div>
+        <div class="badges"><span class="b mood">тепле · живе</span><span class="b fmt">запис екрана</span><span class="b loc">🏠 вдома</span><span class="b pil">P2</span></div>
+      </summary>
+      <div class="body">
+        <div class="lab">Гачок</div>
+        <blockquote>«Дав планшет дитині на 5 хвилин. Ось що вона освоїла.»</blockquote>
+        <div class="lab">Ідея</div>
+        <p class="shoot">Запис екрана реальної гри доньки (анонімно) + закадровий коментар «дивись, як це затягує». Показати момент, де дитина сама розбирається.</p>
+        <div class="lab">CTA</div><blockquote>«Хочеш такий для своєї дитини? Напиши в коментар.»</blockquote>
+      </div>
+    </details>
+
+    <!-- 7 -->
+    <details>
+      <summary>
+        <div class="row1"><div class="num">7</div><div class="ttl">«Скільки реально коштує застосунок»</div><div class="car">▼</div></div>
+        <div class="badges"><span class="b mood">прямий · міфо-руйнівний</span><span class="b fmt">talking-head + цифри</span><span class="b loc">📍 будь-де</span><span class="b pil">P3/P4</span></div>
+      </summary>
+      <div class="body">
+        <div class="lab">Гачок</div>
+        <blockquote>«Мені казали, що такий застосунок коштує як машина. Ось реальні цифри.»</blockquote>
+        <div class="lab">Ідея</div>
+        <p class="shoot">Talking-head + цифри на екрані. Розбий міф «100 000$». Без точних сум клієнтів — лише діапазони.</p>
+        <div class="lab">Написи на екран</div><div class="screen">міф vs реальність · діапазони, не точні суми</div>
+      </div>
+    </details>
+
+    <!-- 8 -->
+    <details>
+      <summary>
+        <div class="row1"><div class="num">8</div><div class="ttl">«Vatra: до / після переробки сайту»</div><div class="car">▼</div></div>
+        <div class="badges"><span class="b mood">практичний · доказовий</span><span class="b fmt">split-screen екранів</span><span class="b loc">🏠 вдома</span><span class="b pil">P3</span></div>
+      </summary>
+      <div class="body">
+        <div class="lab">Гачок</div>
+        <blockquote>«Це той самий бізнес. Зліва — до. Справа — після одного дня роботи.»</blockquote>
+        <div class="lab">Ідея</div>
+        <p class="shoot">Split-screen старий сайт vs новий. З дозволу клієнта або на абстрактному прикладі.</p>
+        <div class="warnb"><b>⚠️</b> Не називай реального клієнта без письмового дозволу.</div>
+      </div>
+    </details>
+
+    <!-- 9 -->
+    <details>
+      <summary>
+        <div class="row1"><div class="num">9</div><div class="ttl">«Чому я не наймаю агентство (і ти, мабуть, теж)»</div><div class="car">▼</div></div>
+        <div class="badges"><span class="b mood">контрарний · смілий</span><span class="b fmt">чистий talking-head</span><span class="b loc">📍 будь-де (Тустань ✓)</span><span class="b pil">P4</span></div>
+      </summary>
+      <div class="body">
+        <div class="lab">Гачок</div>
+        <blockquote>«Я фаундер і свідомо не наймаю агентство. І тобі, скоріш за все, теж не варто.»</blockquote>
+        <div class="lab">Ідея</div>
+        <p class="shoot">Контрарний talking-head — добре заходить у Тустані. Позиція союзника, метод-стовп. Поясни: коли одна людина з AI > агентства.</p>
+      </div>
+    </details>
+
+    <!-- 10 -->
+    <details>
+      <summary>
+        <div class="row1"><div class="num">10</div><div class="ttl">«TSP: система, що тримає 4 проєкти в голові»</div><div class="car">▼</div></div>
+        <div class="badges"><span class="b mood">спокійний · організований</span><span class="b fmt">демо екрана</span><span class="b loc">🏠 вдома</span><span class="b pil">P2</span></div>
+      </summary>
+      <div class="body">
+        <div class="lab">Гачок</div>
+        <blockquote>«Тримати 4 продукти в голові неможливо. Тому я не тримаю — я побудував систему.»</blockquote>
+        <div class="lab">Ідея</div>
+        <p class="shoot">Демо особистої системи (дашборд TSP). Покажи, як одне місце тримає всі проєкти.</p>
+        <div class="lab">CTA</div><blockquote>«Ось як я тримаю проєкти — забирайте метод.»</blockquote>
+      </div>
+    </details>
+
+    <div class="legend" style="margin-top:14px">Усі тексти — з твого <b>Content_Plan_BuildInPublic_v1.md</b>. Заборонені слова: MVP, scope, sprint, pitch, stakeholder. «TreximAI не згадувати» (триває врегулювання).</div>
+  </div>
+
+  <!-- ===== ТЕХ ===== -->
+  <div class="panel" id="tech">
+    <div class="grid">
+      <div class="stat"><div class="l">Тривалість</div><div class="v">20–45 сек</div></div>
+      <div class="stat"><div class="l">Орієнтація</div><div class="v">вертикаль 9:16</div></div>
+      <div class="stat"><div class="l">Гачок</div><div class="v">перші 3 сек</div></div>
+      <div class="stat"><div class="l">Субтитри</div><div class="v">обов'язково</div></div>
+    </div>
+    <div class="card">
+      <h3>📸 Зйомка</h3>
+      <ul>
+        <li>Задня камера телефона (не фронтальна), вертикаль.</li>
+        <li>Телефон стійко, очі на рівні камери, світло на обличчя.</li>
+        <li>Перші 3 сек = гачок, завжди дублюй написом на екрані.</li>
+        <li>2 дублі на кожен гачок: нейтральний + з більшою енергією.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>🎙️ Звук без мікрофона</h3>
+      <ul>
+        <li>Знімай у кімнаті з м'якими речами (шафа, штори) — гасить відлуння.</li>
+        <li>Телефон близько — 30–40 см.</li>
+        <li>Прожени аудіо через <b>Adobe Podcast Enhance</b> → podcast.adobe.com/enhance (безкоштовно, студійний голос).</li>
+        <li>У Тустані (вулиця): стань спиною до вітру, телефон ближче, потім Enhance.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>✂️ Монтаж — лише CapCut</h3>
+      <ul>
+        <li>Обріж зайве на початку/кінці.</li>
+        <li>Текст → Автотитри → мова Українська → перевір орфографію.</li>
+        <li>Додай написи-гачки великим шрифтом.</li>
+        <li>Вріж запис екрана там, де демо.</li>
+        <li>Музика тихо на фоні (без авторських обмежень) → Експорт 1080p.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>🗣️ Тон і CTA</h3>
+      <p class="shoot">Спокійний, конкретний, без хайпу. Категорія — «союзник», не «експерт». CTA м'який, OPEN: «підписуйся, показую як кую далі» / «спробуй сам». Комерція — пізніше.</p>
+    </div>
+  </div>
+
+  <!-- ===== ТУСТАНЬ ===== -->
+  <div class="panel" id="tust">
+    <div class="card"><p style="margin:0" class="legend">Опційно — якщо захочеш вплести пару фактів про локацію в перше відео. Не обов'язково: відео не про Тустань, Тустань = тло.</p></div>
     <div class="grid">
       <div class="stat"><div class="l">Графік</div><div class="v">10:00–18:00</div></div>
       <div class="stat"><div class="l">Квиток</div><div class="v">90 / 45 грн</div></div>
-      <div class="stat"><div class="l">Відстань</div><div class="v">~110 км (Львів→Урич)</div></div>
-      <div class="stat"><div class="l">Що бачимо</div><div class="v">Скелі, музей, «Хата у Глубокім»</div></div>
     </div>
     <div class="card">
-      <b>Один квиток покриває:</b> територію заповідника + музей Тустані + Центр локальної історії «Хата у Глубокім».<br>
-      <span class="legend">Зимовий графік (лист–бер): 9:30–17:00. Вихідні: Різдво, Водохреща, Великдень. Квитки — онлайн або на місці.</span>
+      <div class="fact"><div class="fn">1</div><div><b>Єдина така в Європі</b><span>Наскельна фортеця, де скелі були фундаментом дерев'яних споруд.</span></div></div>
+      <div class="fact"><div class="fn">2</div><div><b>4000+ пазів у камені</b><span>Вирубані вручну гнізда під бруси — по них реконструювали фортецю.</span></div></div>
+      <div class="fact"><div class="fn">3</div><div><b>Скелям ~55 млн років</b><span>Дно прадавнього океану Тетіс.</span></div></div>
+      <div class="fact"><div class="fn">4</div><div><b>Митниця на соляному шляху</b><span>XII–XVI ст. Дрогобич → Закарпаття → Європа.</span></div></div>
+      <div class="fact"><div class="fn">5</div><div><b>Відкрив 1 чоловік</b><span>Михайло Рожко, 1971. По дірках у камені відновив місто на 90%.</span></div></div>
     </div>
     <div class="card">
-      <b>На місці є:</b> мала дерев'яна фортеця · дитячий майданчик · мотузковий парк · кав'ярня · сувенірна крамниця. Дорога — через Східницю.
+      <h3>🪡 Якщо вплітати — кут «невидиме треба вміти прочитати»</h3>
+      <p class="shoot">«Турист бачить просто скелі. Хто знає код — бачить фортецю. Так само я дивлюсь на бізнес: бачу систему, яку треба зібрати.» — місток до Vatra/Кузні.</p>
     </div>
-  </section>
-
-  <!-- ФАКТИ -->
-  <section id="facts">
-    <h2>10 фактів, які чіпляють у кадрі</h2>
-    <div class="card">
-      <div class="fact"><div class="n">1</div><div class="t"><b>Єдина така в Європі</b><span>Наскельна фортеця, де скелі були фундаментом для дерев'яних споруд. Аналогів немає.</span></div></div>
-      <div class="fact"><div class="n">2</div><div class="t"><b>4000+ пазів у камені</b><span>Вирубані вручну гнізда під дерев'яні бруси. По них і реконструювали фортецю.</span></div></div>
-      <div class="fact"><div class="n">3</div><div class="t"><b>~300 петрогліфів</b><span>Вибиті на каменях знаки-малюнки. Загадка, яку досі читають.</span></div></div>
-      <div class="fact"><div class="n">4</div><div class="t"><b>Скелям ~55 млн років</b><span>Дно прадавнього океану Тетіс. Стояв тут ще до того, як з'явилися люди.</span></div></div>
-      <div class="fact"><div class="n">5</div><div class="t"><b>Митниця на соляному шляху</b><span>Збирали мито з купців: Дрогобич → Закарпаття → Західна Європа.</span></div></div>
-      <div class="fact"><div class="n">6</div><div class="t"><b>XII–XVI ст.</b><span>Перша згадка ~1340, остання ~1565. Кількасот років жила, потім зникла.</span></div></div>
-      <div class="fact"><div class="n">7</div><div class="t"><b>Відкрив 1 чоловік</b><span>Архітектор-археолог Михайло Рожко, 1971. Понад 30 років досліджував.</span></div></div>
-      <div class="fact"><div class="n">8</div><div class="t"><b>Реконструкція на 90%</b><span>За пазами Рожко відтворив вигляд 4–5-поверхової дерев'яної будівлі, якої давно немає.</span></div></div>
-      <div class="fact"><div class="n">9</div><div class="t"><b>Скелі мають імена</b><span>Камінь (ядро), Острий Камінь, Мала Скеля. Криниця, цистерни, рукотворні печери.</span></div></div>
-      <div class="fact"><div class="n">10</div><div class="t"><b>Фестиваль «Ту Стань!»</b><span>Щороку в серпні: ~800 реконструкторів, ~10 тис. гостей, бугурти, середньовічна музика.</span></div></div>
-    </div>
-  </section>
-
-  <!-- СТОРІТЕЛІНГ -->
-  <section id="story">
-    <h2>Сторітелінг — кути, з яких заходити</h2>
-    <div class="card">
-      <p class="legend" style="margin-top:0">Не перелічуй факти — обери 1–2 кути і веди через них.</p>
-      <div class="fact"><div class="n">A</div><div class="t"><b>«Місто, яке збудували в небі»</b><span>Дерев'яний 4–5-поверховий замок просто на скелях. Закрий очі — і уяви, як він тут стояв.</span></div></div>
-      <div class="fact"><div class="n">B</div><div class="t"><b>«Один чоловік повернув ціле місто»</b><span>Рожко по дірках у камені відновив те, що зникло 500 років тому. Історія про одержимість і деталь.</span></div></div>
-      <div class="fact"><div class="n">C</div><div class="t"><b>«Невидиме, яке треба вміти прочитати»</b><span>Турист бачить просто скелі. Хто знає код — бачить фортецю. Метафора всього, чим ти займаєшся.</span></div></div>
-    </div>
-  </section>
-
-  <!-- КАРКАС ВІДЕО -->
-  <section id="video" class="step">
-    <h2>Каркас відео (3–5 хв влог)</h2>
-
-    <div class="card">
-      <span class="tag b">0–8 сек · ХУК</span>
-      <div class="hook"><i>Варіант 1:</i> «Це — єдина така фортеця в Європі. І її… не існує. Зараз поясню.»</div>
-      <div class="hook"><i>Варіант 2:</i> «500 років тому тут стояв дерев'яний замок у 5 поверхів. Сьогодні від нього лишились тільки… дірки в камені.»</div>
-      <div class="hook"><i>Варіант 3 (особистий):</i> «Я взяв вихідний, родину — і поїхав туди, де історію треба вміти читати. Поїхали.»</div>
-    </div>
-
-    <div class="card">
-      <span class="tag">10–60 сек · СЕТАП</span>
-      <p style="margin:8px 0 0">Де ти, чому тут, що це за місце. 1–2 факти-гачки (№1 + №4 або №7). Покажи масштаб скель.</p>
-    </div>
-
-    <div class="card">
-      <span class="tag">1–3 хв · ТІЛО</span>
-      <ul>
-        <li>Веди через обраний кут (A/B/C вище), не списком.</li>
-        <li>Один «вау»-факт біля конкретної скелі: пази → реконструкція.</li>
-        <li>Особистий шар: що ти відчув, що нагадало про роботу/життя.</li>
-      </ul>
-    </div>
-
-    <div class="card bridge">
-      <span class="tag g">останні 20–30 сек · МІСТОК + CTA</span>
-      <p style="margin:8px 0 0">Звʼяжи місце з тим, чим живеш (див. секцію нижче). М'який CTA: «підписуйся — показую свої проєкти і поїздки», або згадка Кузні / поточного кейсу.</p>
-    </div>
-  </section>
-
-  <!-- КАДРИ -->
-  <section id="shots">
-    <h2>Shot-list — що зняти на місці</h2>
-    <div class="card">
-      <div class="shot"><div class="dot"></div><div>Широкий кадр скель знизу вгору — масштаб (під хук)</div></div>
-      <div class="shot"><div class="dot"></div><div>Крупно: пази/вруби в камені — «ось ці дірки тримали ціле місто»</div></div>
-      <div class="shot"><div class="dot"></div><div>Ти на тлі скелі, говориш у камеру — talking head</div></div>
-      <div class="shot"><div class="dot"></div><div>Макет/реконструкція в музеї — «ось як це виглядало»</div></div>
-      <div class="shot"><div class="dot"></div><div>Деталі: петрогліфи, криниця, дерев'яна фортеця</div></div>
-      <div class="shot"><div class="dot"></div><div>Сім'я / дорога / кав'ярня — людський, теплий b-roll</div></div>
-      <div class="shot"><div class="dot"></div><div>Фінал: вид згори зі скелі — під CTA</div></div>
-    </div>
-    <p class="legend">Знімай більше b-roll, ніж здається треба. Говори короткими реченнями — легше монтувати.</p>
-  </section>
-
-  <!-- МІСТОК ДО СПРАВИ -->
-  <section id="bridge">
-    <h2>Місток: поїздка → твоя справа</h2>
-    <div class="card bridge">
-      <p style="margin-top:0">Стратегія цих відео — показувати <b>життя, досвід, проєкти</b>, і через це знаходити клієнтів. Тустань дає 3 готові містки:</p>
-      <div class="fact"><div class="n">→</div><div class="t"><b>Тустань = Vatra / сайти</b><span>«Турист бачить скелі. Я бачу систему, яку хтось спроєктував по деталях. Так само з сайтом — за пару днів збираю те, що працює, а не просто гарне.»</span></div></div>
-      <div class="fact"><div class="n">→</div><div class="t"><b>Один чоловік + деталь = Кузня</b><span>Рожко по дрібницях відновив місто. Ти по дрібницях + AI збираєш продукти швидко. Це про підхід, не про хвастощі.</span></div></div>
-      <div class="fact"><div class="n">→</div><div class="t"><b>Спадщина = благодійність</b><span>М'яко: місця як Тустань тримаються на людях і громаді. Природний місток до теми фонду / спільної справи — без продажу.</span></div></div>
-      <p class="legend" style="margin-bottom:0">Обери <b>один</b> місток на відео. Не пхай усі три — буде реклама.</p>
-    </div>
-  </section>
-
-  <div class="foot">
-    Зроблено для зйомки · оновити можна будь-коли<br>
-    Джерела: Вікіпедія, заповідник «Тустань», Українська правда.Життя
   </div>
 
+  <!-- ===== НАВІЩО ===== -->
+  <div class="panel" id="why">
+    <div class="card">
+      <h3>🎯 Навіщо ці відео</h3>
+      <p>«Я — фаундер зі Львова. Сам, разом з AI-агентами, веду чотири проєкти: застосунок для дітей, сайти під бізнес, особисту систему й фонд. Показую без прикрас — що працює, що ламається, скільки коштує.»</p>
+      <ul>
+        <li><b>Лідген:</b> бізнес бачить, що ти реально кодиш → приходять за Vatra/AG.</li>
+        <li><b>Trust:</b> бачать процес, а не рекламу.</li>
+        <li><b>Спільнота перед комерцією:</b> спершу аудиторія й довіра, гроші — потім.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>📐 4 стовпи (ротуй)</h3>
+      <ul>
+        <li><b>P1 Кузня / за лаштунками</b> — як одна людина веде 4 продукти (30%)</li>
+        <li><b>P2 Демо продукту</b> — жива демонстрація екрана (30%)</li>
+        <li><b>P3 Кейс / історія</b> — проблема → рішення → число (20%)</li>
+        <li><b>P4 Метод / урок</b> — 1 думка для фаундерів і батьків (20%)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>🚀 Перше відео</h3>
+      <p class="shoot">Найлегше почати з <b>№1 (маніфест)</b> або <b>№5 (3 помилки)</b> — чистий talking-head, лише ти + камера. Ідеально для Тустані. Демо-екранні зніми вдома пізніше.</p>
+    </div>
+  </div>
+
+  <div class="foot">Кузня · перші відео · джерело: Content_Plan_BuildInPublic_v1.md</div>
+
 </div>
+
+<script>
+  document.querySelectorAll('.tab').forEach(function(t){
+    t.addEventListener('click',function(){
+      document.querySelectorAll('.tab').forEach(function(x){x.classList.remove('on')});
+      document.querySelectorAll('.panel').forEach(function(x){x.classList.remove('on')});
+      t.classList.add('on');
+      document.getElementById(t.dataset.p).classList.add('on');
+      window.scrollTo({top:0,behavior:'smooth'});
+    });
+  });
+</script>
 </body>
 </html>
